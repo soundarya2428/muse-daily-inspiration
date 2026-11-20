@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root,
+  [data-theme='light'] {
+    --color-bg: 248 244 236;          /* Warm Ivory */
+    --color-bg-raised: 253 251 247;   /* Ivory 50 */
+    --color-bg-sunken: 240 233 219;   /* Ivory 200 */
+    --color-border: 228 218 198;      /* Ivory 300 */
+    --color-text: 41 38 45;           /* Soft Charcoal */
+    --color-text-soft: 85 80 94;      /* Charcoal light */
+    --color-text-faint: 122 116 130;
+    --color-accent: 53 36 61;         /* Deep Plum */
+    --color-accent-text: 253 251 247;
+    --color-rose: 217 165 165;        /* Dusty Rose */
+    --color-lavender: 201 187 216;    /* Muted Lavender */
+    --color-gold: 150 121 59;         /* deepened Champagne Gold for contrast */
+    --color-highlight: 243 227 227;   /* Rose 100 */
+  }
+
+  [data-theme='dark'] {
+    --color-bg: 24 16 32;             /* Plum 900 */
+    --color-bg-raised: 42 28 49;      /* Plum 700 */
+    --color-bg-sunken: 32 21 37;      /* Plum 800 */
+    --color-border: 74 55 82;         /* Plum 50 */
+    --color-text: 240 233 219;        /* Warm ivory text */
+    --color-text-soft: 201 187 216;   /* Muted Lavender */
+    --color-text-faint: 163 152 174;
+    --color-accent: 220 196 148;      /* Champagne Gold */
+    --color-accent-text: 24 16 32;
+    --color-rose: 217 165 165;
+    --color-lavender: 201 187 216;
+    --color-gold: 199 166 106;
+    --color-highlight: 53 36 61;      /* Plum 600 */
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: theme('colors.surface');
+    color: theme('colors.primary');
+    font-family: theme('fontFamily.sans');
+    transition: background-color 300ms ease, color 300ms ease;
+  }
+
+  ::selection {
+    background-color: theme('colors.haze / 45%');
+  }
+
+  *:focus-visible {
+    outline: 2px solid theme('colors.gilt');
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
